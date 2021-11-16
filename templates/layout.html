@@ -33,13 +33,20 @@
             <a class="nav-link" href="https://sersoc.cs.buap.mx/">Serv Social</a>
             </li>
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/web/login" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Inicio de sesion
+            {% if user.is_authenticated %}
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Hola {{ user.get_username }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="#">Ver perfil</a></li>
-                <li><a class="dropdown-item" href="#">Cerrar sesion</a></li>
-            </ul>
+                <li><a class="dropdown-item" href="{% url 'logout'%}">Cerrar sesion</a></li>
+            </ul>            
+            {% else %}
+            <a class="nav-link dropdown-toggle" href="{% url 'login'%}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Inicio de sesion
+            </a>
+            {% endif %}                 
+
             </li>
         </ul>
         </div>
@@ -50,3 +57,4 @@
     {%block content%} {% endblock %}
   
     </main>
+    {% bootstrap_javascript %}
