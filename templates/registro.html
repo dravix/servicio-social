@@ -1,0 +1,61 @@
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+
+<div class="container">
+  <div class="jumbotron">
+    <h2>Registro de estudiantes</h2>
+    <h5>Periodo Oto&ntilde;o 2021</h5>
+  </div>
+
+  <div class="row">
+    {% bootstrap_messages %}
+
+    <div class="col">
+      <form  method="post" class="form">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="email">Correo electronico</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingresa tu correo electronico">
+          <small id="emailHelp" class="form-text text-muted">Ingresa tu correo institucional.</small>
+        </div>
+        <div class="form-group">
+          <label for="contrasena">Contraseña</label>
+          <input type="tipPassword" class="form-control" id="contrasena" placeholder="Escribe una constraseña unica para este portal">
+        </div>
+        <div class="form-group">
+          <label for="matricula">Matricula</label>
+          <input type="number" class="form-control" id="matricula" aria-describedby="emailHelp" placeholder="2021000001">
+        </div>
+        <div class="form-group">
+          <label for="programa">Programa</label>
+          <input type="text" class="form-control" id="programa" >
+        </div>
+        <div class="form-group">
+          <label for="programa">Tipo</label>
+          <select class="custom-select" id="tipo">
+            <option selected>Seleccione el tipo de programa</option>
+            <option value="1">Servicio Social</option>
+            <option value="2">Practica Profesional</option>
+          </select>
+        </div>
+
+      </form>
+    </div>
+    <div class="col" >
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top lazy-loaded" src="//via.placeholder.com/350x350" data-lazy-type="image" data-src="//via.placeholder.com/350x350">
+        <div class="card-body">
+          <h5 class="card-title">Fotografia del registro</h5>
+          <a href="#" class="btn btn-default">Seleccionar archivo ...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary center">Registrar datos</button>
+
+</div>
