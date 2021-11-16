@@ -5,9 +5,8 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Como integrar Django y Bootstrap 4 </title>
+    <title>{% block title %}Servicio Social y Practica Profesional{% endblock %}</title>
 
-  	  {# Cargamos la librería #}
 	  {% load bootstrap4 %}
 
 	  {# CSS Bootstrap #}
@@ -15,4 +14,40 @@
 
 
   </head>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Serv. Social</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="https://www.cs.buap.mx/">Facultad</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="https://sersoc.cs.buap.mx/">Serv Social</a>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/web/login" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Inicio de sesion
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+            </li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+    <main class="container px-4 pt-5 my-2 border-bottom" >
+    
+    {%block content%} {% endblock %}
   
+    </main>

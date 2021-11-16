@@ -1,3 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}Groupware de Servicio Social{% endblock %}
+
+{% block content %}
+
 {# Load the tag library #}
 {% load bootstrap4 %}
 
@@ -7,7 +13,7 @@
 
 
 <div class="container">
-  <div class="jumbotron">
+  <div class="my-5">
     <h2>Registro de estudiantes</h2>
     <h5>Periodo Oto&ntilde;o 2021</h5>
   </div>
@@ -59,3 +65,4 @@
   <button type="submit" class="btn btn-primary center">Registrar datos</button>
 
 </div>
+{% endblock %}
