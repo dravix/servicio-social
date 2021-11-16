@@ -47,9 +47,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'corsheaders',
-    'rest_framework',
-    'rest_framework_simplejwt',
-    'api.apps.ApiConfig',
     'web'
 ]
 
